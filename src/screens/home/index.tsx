@@ -100,12 +100,12 @@ export function Home() {
   }
 
   return (
-    <div className=" w-1/4 h-2/2">
-      <div className="px-5 py-5 bg-zinc-900 rounded-3xl border-4 border-zinc-600">
+    <div>
+      <div className="max-w-md h-2/2 px-5 py-5 bg-zinc-900 rounded-3xl border-4 border-zinc-600">
 
         <Display valor={num}></Display>
 
-        <div className="grid grid-cols-4 gap-5 my-5">
+        <div className="grid grid-cols-4 gap-6 my-5">
           {
             numbers.map((numbers, index) => {
               if (numbers == '+' || numbers == '-' || numbers == 'X' || numbers == '/') {

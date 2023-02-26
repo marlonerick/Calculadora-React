@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Display } from "../../components/Display"
+import { Display } from "../../components/Display/Display"
 import { Theme } from "../../components/Theme/ThemeMode"
 
 const numbers = [

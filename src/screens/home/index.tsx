@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Display } from "../../components/Display"
+import { Theme } from "../../components/Theme/ThemeMode"
 
 const numbers = [
   'C',
@@ -100,8 +101,11 @@ export function Home() {
   }
 
   return (
-    <div>
-      <div className="max-w-md h-2/2 px-5 py-5 bg-zinc-900 rounded-3xl border-4 border-zinc-600">
+    <div className="flex flex-row justify-center items-center">
+      <div>
+        <Theme />
+      </div>
+      <div className="w-96 h-2/2 px-5 py-5 bg-zinc-400 dark:bg-zinc-900 rounded-3xl border-4 border-zinc-600">
 
         <Display valor={num}></Display>
 
@@ -111,7 +115,7 @@ export function Home() {
               if (numbers == '+' || numbers == '-' || numbers == 'X' || numbers == '/') {
                 return (
                   <div key={index}>
-                    <button value={numbers} onClick={operatorHandler} className="w-20 h-20 rounded-3xl bg-violet-800 text-white text-xl font-bold shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 focus:outline focus:ring-2 focus:ring-violet-500  focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
+                    <button value={numbers} onClick={operatorHandler} className="w-16 h-16 rounded-3xl bg-violet-800 text-white text-xl font-bold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-violet-500 focus:outline focus:ring-2 focus:ring-violet-500  focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
                   </div>
                 )
 
@@ -121,40 +125,40 @@ export function Home() {
                   if (numbers == 'C') {
                     return (
                       <div key={index}>
-                        <button value={numbers} onClick={clean} className="w-20 h-20 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-violet-500/20 transition hover:bg-zinc-300 focus:outline focus:ring-2 focus:ring-zinc-500  focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
+                        <button value={numbers} onClick={clean} className="w-16 h-16 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-zinc-300 focus:outline focus:ring-2 focus:ring-zinc-500  focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
                       </div>
                     )
                   }
                   else if (numbers == '%') {
                     return (
                       <div key={index}>
-                        <button value={numbers} onClick={porcetage} className="w-20 h-20 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-violet-500/20 transition hover:bg-zinc-300 duration-300 focus:outline focus:ring-2 focus:ring-zinc-500  focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
+                        <button value={numbers} onClick={porcetage} className="w-16 h-16 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-zinc-300 duration-300 focus:outline focus:ring-2 focus:ring-zinc-500  focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
                       </div>
                     )
                   }
                   else if (numbers == '+/-') {
                     return (
                       <div key={index}>
-                        <button value={numbers} onClick={changeSignal} className="w-20 h-20 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-violet-500/20 transition hover:bg-zinc-300 duration-300 focus:outline focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
+                        <button value={numbers} onClick={changeSignal} className="w-16 h-16 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-zinc-300 duration-300 focus:outline focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
                       </div>
                     )
                   }
                   return (
                     <div key={index}>
-                      <button value={numbers} className="w-20 h-20 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-violet-500/20 transition hover:bg-zinc-300 duration-300 focus:outline focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-background" >{numbers}</button>
+                      <button value={numbers} className="w-16 h-16 rounded-3xl bg-zinc-500 text-white text-xl font-semibold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-zinc-300 duration-300 focus:outline focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-background" >{numbers}</button>
                     </div>
                   )
                 }
                 else if (numbers == '=') {
                   return (
                     <div key={index}>
-                      <button value={numbers} onClick={calculate} className="w-44 h-20 rounded-3xl bg-violet-800 text-white text-3xl font-semibold shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 focus:outline focus:ring-2 focus:ring-violet-800 focus:ring-offset-2 focus:ring-offset-background" >{numbers}</button>
+                      <button value={numbers} onClick={calculate} className="w-36 h-16 rounded-3xl bg-violet-800 text-white text-3xl font-semibold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-violet-500 focus:outline focus:ring-2 focus:ring-violet-800 focus:ring-offset-2 focus:ring-offset-background" >{numbers}</button>
                     </div>
                   )
                 }
                 return (
                   <div key={index} >
-                    <button name={numbers} value={numbers} onClick={() => handleClickNumber(numbers)} className="w-20 h-20 rounded-3xl bg-zinc-800 text-white text-2xl font-semibold shadow-lg shadow-violet-500/20 transition hover:bg-zinc-600 hover:border-zinc-300 focus:outline focus:ring-2 focus:ring-zinc-800 focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
+                    <button name={numbers} value={numbers} onClick={() => handleClickNumber(numbers)} className="w-16 h-16 rounded-3xl bg-zinc-800 text-white text-2xl font-semibold shadow-lg shadow-purple-900 dark:shadow-violet-700/50 transition hover:bg-zinc-600 hover:border-zinc-300 focus:outline focus:ring-2 focus:ring-zinc-800 focus:ring-offset-2 focus:ring-offset-background">{numbers}</button>
                   </div>
                 )
               }
